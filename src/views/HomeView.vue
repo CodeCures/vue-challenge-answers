@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue';
+import OptimizePerfDirective from '@/components/OptimizePerfDirective.vue';
 </script>
 
 <template>
   <main>
-    <HelloWorld />
+    <OptimizePerfDirective />
   </main>
 </template>
