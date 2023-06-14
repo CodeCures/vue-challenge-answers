@@ -1,71 +1,14 @@
-<script setup lang="ts">
-import { ref } from 'vue';
-import TreeComponent from '@/components/TreeComponent.vue';
+<script setup lang='ts'>
+import { useToggle } from '@/composable/toggle';
 
-interface TreeData {
-  key: string
-  title: string
-  children?: TreeData[]
-}
-
-const treeData = ref<TreeData[]>([
-        {
-          key: "1",
-          title: "Parent 1",
-          children: [{
-            key: "1-1",
-            title: "child 1",
-          }, {
-            key: "1-2",
-            title: "child 2",
-            children: [{
-              key: "1-2-1",
-              title: "grandchild 1",
-            }, {
-              key: "1-2-2",
-              title: "grandchild 2",
-            }],
-          }],
-        },
-        {
-          key: "2",
-          title: "Parent 2",
-          children: [{
-            key: "2-1",
-            title: "child 1",
-            children: [{
-              key: "2-1-1",
-              title: "grandchild 1",
-            }, {
-              key: "2-1-2",
-              title: "grandchild 2",
-            }],
-          }, {
-            key: "2-2",
-            title: "child 2",
-          }],
-        },
-        {
-          key: "3",
-          title: "Parent 3",
-          children: [{
-            key: "3-1",
-            title: "child 1",
-            children: [{
-              key: "3-1-1",
-              title: "grandchild 1",
-            }, {
-              key: "3-1-2",
-              title: "grandchild 2",
-            }],
-          }],
-        },
-      ])
+const { state, toggle } = useToggle(false);
 
 </script>
 
 <template>
-  <main>
-    <TreeComponent :data="treeData"/>
-  </main>
+  <p>State: {{ state ? 'ON' : 'OFF' }}</p>
+  <p @click="toggle">
+    Toggle state
+  </p>
 </template>
+
