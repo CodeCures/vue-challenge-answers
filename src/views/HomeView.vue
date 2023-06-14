@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import GlobalCss from "@/components/GlobalCss.vue";
+import FunctionalComponent from '@/components/FunctionalComponent.vue';
 </script>
 
 <template>
   <main>
-    <GlobalCss />
+    <FunctionalComponent />
   </main>
 </template>
