@@ -1,14 +1,14 @@
-<script setup lang="ts">
-import { ref } from 'vue';
-import TreeComponent from '@/components/TreeComponent.vue';
+import { mount } from "@vue/test-utils"
+import { describe, it, expect } from "vitest"
+import HomeView from "@/views/HomeView.vue"
+import TreeComponent from "../TreeComponent.vue"
 
-interface TreeData {
-  key: string
-  title: string
-  children?: TreeData[]
-}
-
-const treeData = ref<TreeData[]>([
+describe("TreeComponent", () => {
+  it("should work", async() => {
+    const wrapper = mount(HomeView)
+    const wrapperTree = wrapper.findComponent(TreeComponent)
+    await wrapper.setProps({
+      data: [
         {
           key: "1",
           title: "Parent 1",
@@ -60,12 +60,8 @@ const treeData = ref<TreeData[]>([
             }],
           }],
         },
-      ])
-
-</script>
-
-<template>
-  <main>
-    <TreeComponent :data="treeData"/>
-  </main>
-</template>
+      ],
+    })
+    expect(wrapperTree.text()).toMatchInlineSnapshot("\"Parent 1child 1child 2grandchild 1grandchild 2Parent 2child 1grandchild 1grandchild 2child 2Parent 3child 1grandchild 1grandchild 2\"")
+  })
+})
