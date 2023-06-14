@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { useToggle } from '@/composable/toggle';
 import { useLocalStorage } from '@/composable/localstorage';
+import MouseComponent from '@/components/MouseComponent.vue';
 
 const { state, toggle } = useToggle(false);
 
@@ -22,5 +23,7 @@ function update() {
     <h2>{{ count }}</h2>
     <button @click="update">increment</button>
   </div>
+
+  <MouseComponent />
 </template>
 
