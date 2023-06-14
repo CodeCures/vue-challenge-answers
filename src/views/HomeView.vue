@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import DynamicCssValue from "@/components/DynamicCssValue.vue";
+import GlobalCss from "@/components/GlobalCss.vue";
 </script>
 
 <template>
   <main>
-    <DynamicCssValue />
+    <GlobalCss />
   </main>
 </template>
