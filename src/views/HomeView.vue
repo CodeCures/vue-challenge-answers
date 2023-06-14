@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import FunctionalComponent from '@/components/FunctionalComponent.vue';
+import RenderFunctionComp from '@/components/RenderFunctionComp.vue'
 </script>
 
 <template>
   <main>
-    <FunctionalComponent />
+    <RenderFunctionComp />
   </main>
 </template>
