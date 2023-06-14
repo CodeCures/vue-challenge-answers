@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import OptimizePerfDirective from '@/components/OptimizePerfDirective.vue';
+import DynamicCssValue from "@/components/DynamicCssValue.vue";
 </script>
 
 <template>
   <main>
-    <OptimizePerfDirective />
+    <DynamicCssValue />
   </main>
 </template>
