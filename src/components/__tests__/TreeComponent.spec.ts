@@ -5,8 +5,7 @@ import TreeComponent from "../TreeComponent.vue"
 
 describe("TreeComponent", () => {
   it("should work", async() => {
-    const wrapper = mount(HomeView)
-    const wrapperTree = wrapper.findComponent(TreeComponent)
+    const wrapper = mount(TreeComponent)
     await wrapper.setProps({
       data: [
         {
@@ -62,6 +61,6 @@ describe("TreeComponent", () => {
         },
       ],
     })
-    expect(wrapperTree.text()).toMatchInlineSnapshot("\"Parent 1child 1child 2grandchild 1grandchild 2Parent 2child 1grandchild 1grandchild 2child 2Parent 3child 1grandchild 1grandchild 2\"")
+    expect(wrapper.text()).toMatchInlineSnapshot("\"Parent 1child 1child 2grandchild 1grandchild 2Parent 2child 1grandchild 1grandchild 2child 2Parent 3child 1grandchild 1grandchild 2\"")
   })
 })
